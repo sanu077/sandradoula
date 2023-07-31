@@ -9,9 +9,19 @@
 
   <!-- Load Montserrat and Borel fonts from Google Fonts API -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Borel&display=swap" rel="stylesheet">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
  
   <style>
+    /* Custom styles for the navbar links and headers */
+    .navbar-light .navbar-nav .nav-link {
+      color: #be823c;
+      display: flex;
+      align-items: center; /* Center the links vertically */
+      height: 100%; /* Set the height to fill the navbar */
+    }
     .about-me-bg  {
       background-color: #f7e0d4; /* Castanho claro background color */
     }
@@ -19,6 +29,7 @@
     .about-me-container {
       padding-left: 0;
       padding-right: 0;
+      padding-top: 10px;
     }
      /* Custom styles for the navbar links and headers */
      .navbar-light .navbar-nav .nav-link {
@@ -62,25 +73,39 @@
       border-color: #be823c;
     }
 
+    
     /* Change the button text color for better visibility */
     .btn-primary:hover {
       color: #ffffff;
-    }
-     /* Reduce the nav bar height */
-     .navbar {
-      padding-top: 8px;
-      padding-bottom: 8px;
+      background-color: #d45d10; /* Change the background color on hover */
+      border-color: #d45d10; /* Change the border color on hover */
     }
 
-    /* Adjust the logo container height */
-    .navbar-brand {
-      height: 32px;
+    .btn-primary:target {
+      background-color: #be823c; /* Change the background color when the button is clicked */
+      border-color: #d45d10; /* Change the border color when the button is clicked */
     }
+     
 
     /* Add padding to the top of all sections */
     section {
       padding-top: 1em; /* Adjust the value as needed */
     }
+
+     /* Increase the size of the Instagram icon */
+     .fab.fa-instagram {
+      font-size: 28px; /* Adjust the font size to increase/decrease icon size */
+    }
+    /* Increase the size of the Whatsapp icon */
+    .fab.fa-whatsapp {
+      font-size: 28px; /* Adjust the font size to increase/decrease icon size */
+    }
+
+    /* Create a gap between buttons */
+  .btn-gap {
+    display: inline-block;
+    width: 10px; /* Adjust the width for the desired gap size */
+  }
     
   </style>
 </head>
@@ -105,7 +130,19 @@
         <a class="nav-link" href="#doula-services">Doula Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="https://www.instagram.com/_sandramiranda_/" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <!-- Add the WhatsApp link to the navbar -->
+    <li class="nav-item">
+      <a class="nav-link" href="https://wa.me/1234567890" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">          <button class="btn btn-primary" data-toggle="modal" data-target="#contact-modal">Contact Me</button>
+        </a>
       </li>
     </ul>
   </div>
@@ -117,7 +154,7 @@
 
   <section id="about" class="my-5 about-me-bg">
     <div class="container about-me-container">
-
+        <br>
       <h2>About Me</h2>
       <div class="row">
         <div class="col-md-6">
@@ -129,7 +166,13 @@
           <p>Baby Yoga is not only a fun and enjoyable experience for both you and your baby but also a beautiful way to enhance your bond. I believe in the power of nurturing touch and movement to create a loving connection with your little one.</p>
           <p>As a certified doula, I am committed to providing compassionate care during the postpartum period. My goal is to offer emotional support, breastfeeding guidance, and practical assistance to ensure a smooth transition to motherhood.</p>
           <p>Join me in my classes or take advantage of my doula services, and let's embark on this wonderful journey together!</p>
-          <button class="btn btn-primary">Contact Me</button>
+              <div class="text-center"> <!-- Use text-center to center the content -->
+
+              <button class="btn btn-primary" data-toggle="modal" data-target="#contact-modal">Contact Me</button>
+              <span class="btn-gap"></span> <!-- Add a span to create a gap between buttons -->
+              <a class="btn btn-primary" style="padding-left: 10px;" href="https://www.instagram.com/_sandramiranda_/" target="_blank">Instagram</a>
+              
+              </div>
         </div>
       </div>
     </div>
@@ -144,6 +187,7 @@
           <img src="baby-yoga.jpg" alt="Baby Yoga" class="img-fluid">
         </div>
         <div class="col-md-6">
+          <br>
           <h3>Benefits of Baby Yoga</h3>
           <ul>
             <li>Enhanced Bonding between parent and baby</li>
@@ -169,6 +213,7 @@
           <img src="doula-services.jpg" alt="Doula Services" class="img-fluid">
         </div>
         <div class="col-md-6">
+          <br>
           <h3>Benefits of Doula Follow-Up</h3>
           <ul>
             <li>Emotional Support during postpartum period</li>
@@ -184,6 +229,27 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal for Contact Me -->
+<div class="modal fade" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="contact-modal-label" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contact-modal-label">Contact Me</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <script type="text/javascript" src="https://form.jotform.com/jsform/232108051098349"></script>
+        <!-- Add your contact form here --> 
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
 
   <!-- Footer -->
   <footer class="py-3 mt-5 text-center">
